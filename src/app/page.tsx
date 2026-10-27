@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TechText from "@/components/TechText";
 import { Faq } from "@/components/faq";
 import { ArrowUpRight } from "@/components/icons";
 import { Navbar } from "@/components/navbar";
@@ -35,7 +36,43 @@ export default function Home() {
           </div>
           <div data-reveal="hero" className="relative mx-auto max-w-4xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full bg-black/20 px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-primary-soft"><span className="h-1.5 w-1.5 rounded-full bg-primary-bright" /> Maharashtra · India</p>
-            <h1 className="mt-7 font-heading text-[clamp(3.1rem,8vw,7.3rem)] font-medium leading-[0.9] tracking-[-0.075em] text-foreground">Bridging the gap<br />from <em className="font-serif font-normal text-primary-soft">campus</em> to industry.</h1>
+            <div className="hero-tech-headline mt-7">
+              <h1 className="sr-only">Bridging the gap from campus to industry.</h1>
+              <div aria-hidden="true" className="hero-tech-stack">
+                {["Bridging the gap", "from campus to", "industry."].map((line) => (
+                  <div key={line} className="hero-tech-row">
+                    <TechText
+                      text={line}
+                      fontWeight={600}
+                      fontSize={150}
+                      reveal="letter"
+                      dashLength={4}
+                      dashGap={2}
+                      specks={15}
+                      intro="none"
+                      introDuration={2}
+                      clickKick
+                      guides={false}
+                      fontFamily=""
+                      letterSpacing={-0.05}
+                      accentColor="currentColor"
+                      reach={200}
+                      softness={0.7}
+                      lineStyle="dashed"
+                      strokeWidth={1.5}
+                      speed={1}
+                      bounce={0.4}
+                      selection
+                      labels
+                      color="currentColor"
+                      align="center"
+                      draggable
+                      sweep
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
             <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg">Code Crunch helps students discover hackathons, developer programs, technology events, workshops, and AI opportunities worth showing up for.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a href={whatsappUrl} target="_blank" rel="noreferrer" style={{ color: "#100b18" }} className="inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-foreground px-5 text-sm font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Join the community <ArrowUpRight className="h-4 w-4" /></a>
