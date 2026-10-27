@@ -32,7 +32,7 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-[90] px-6 sm:px-8">
+    <header data-reveal="nav" className="pointer-events-none fixed inset-x-0 top-0 z-[90] px-6 sm:px-8">
       <div className="pointer-events-auto relative mx-auto max-w-[1120px]">
         <div className="flex h-[4.65rem] items-center rounded-b-[1.65rem] bg-black px-5 shadow-[0_12px_34px_rgba(0,0,0,0.22)] sm:px-7 lg:rounded-b-[2rem]">
           <Link href="#top" aria-label="Code Crunch home" className="flex h-10 items-center rounded-md bg-[#f5f3fa] px-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
